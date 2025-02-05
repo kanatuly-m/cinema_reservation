@@ -5,7 +5,7 @@ public class Main {
         Cinema cinema = new Cinema("CinemaCity", "New York", 10);
 
         film1.displayFilmDetails();
-        cinema.showAvailableSeats();
+        cinema.showAvailableSeats();.
 
         viewer1.bookTicket(film1);
         cinema.bookTicket(viewer1);
