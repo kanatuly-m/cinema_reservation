@@ -4,7 +4,7 @@ public class Main {
         Viewer viewer1 = new Viewer("John Doe", 25, "johndoe@example.com");
         Cinema cinema = new Cinema("CinemaCity", "New York", 10);
 
-        film1.displayFilmDetails();.
+        film1.displayFilmDetails();
         cinema.showAvailableSeats();
 
         viewer1.bookTicket(film1);
