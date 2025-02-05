@@ -8,7 +8,7 @@ public class Main {
         cinema.showAvailableSeats();
 
         viewer1.bookTicket(film1);
-        cinema.bookTicket(viewer1);я
+        cinema.bookTicket(viewer1);
         cinema.showAvailableSeats();
     }
 }
