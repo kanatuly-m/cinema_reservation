@@ -1,50 +1,44 @@
-// Cinema.java
+import java.util.*;
+
 public class Cinema {
-    private String cinemaName;
-    private String location;
-    private int availableSeats;
+    private List<Film> films = new ArrayList<>();
 
-    public Cinema(String cinemaName, String location, int availableSeats) {
-        this.cinemaName = cinemaName;
-        this.location = location;
-        this.availableSeats = availableSeats;
+    // Method to add a film
+    public void addFilm(Film film) {
+        films.add(film);
     }
 
-    // Getter and Setter methods
-    public String getCinemaName() {
-        return cinemaName;
+    // Method to filter films by rating
+    public List<Film> filterByRating(double minRating) {
+        List<Film> filteredFilms = new ArrayList<>();
+        for (Film film : films) {
+            if (film.getRating() >= minRating) {
+                filteredFilms.add(film);
+            }
+        }
+        return filteredFilms;
     }
 
-    public void setCinemaName(String cinemaName) {
-        this.cinemaName = cinemaName;
+    // Method to sort films by title
+    public List<Film> sortFilmsByTitle() {
+        films.sort(Comparator.comparing(Film::getTitle));
+        return films;
     }
 
-    public String getLocation() {
-        return location;
+    // Method to search a film by title
+    public Film searchFilmByTitle(String title) {
+        for (Film film : films) {
+            if (film.getTitle().equals(title)) {
+                return film;
+            }
+        }
+        return null;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public int getAvailableSeats() {
-        return availableSeats;
-    }
-
-    public void setAvailableSeats(int availableSeats) {
-        this.availableSeats = availableSeats;
-    }
-
-    public void showAvailableSeats() {
-        System.out.println("Available seats in " + cinemaName + ": " + availableSeats);
-    }
-
-    public void bookTicket(Viewer viewer) {
-        if (availableSeats > 0) {
-            availableSeats--;
-            System.out.println(viewer.getName() + " successfully booked a ticket.");
-        } else {
-            System.out.println("No available seats.");
+    // Method to display all films
+    public void displayFilms() {
+        for (Film film : films) {
+            System.out.println(film);
         }
     }
 }

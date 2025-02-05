@@ -1,16 +1,14 @@
-// Viewer.java
 public class Viewer {
     private String name;
     private int age;
-    private String email;
 
-    public Viewer(String name, int age, String email) {
+    // Constructor
+    public Viewer(String name, int age) {
         this.name = name;
         this.age = age;
-        this.email = email;
     }
 
-    // Getter and Setter methods
+    // Getters and Setters
     public String getName() {
         return name;
     }
@@ -27,15 +25,8 @@ public class Viewer {
         this.age = age;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void bookTicket(Film film) {
-        System.out.println(name + " booked a ticket for the movie: " + film.getTitle());
+    // Method to watch a film
+    public void watchFilm(Film film) {
+        System.out.println(name + " is watching " + film.getTitle());
     }
 }
